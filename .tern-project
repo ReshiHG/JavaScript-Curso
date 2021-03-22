@@ -1,0 +1,30 @@
+{
+  "ecmaVersion": 8,
+  "libs": [
+    "browser",
+    "jquery",
+    "react"
+  ],
+  "loadEagerly": [],
+  "dontLoad": [
+    "node_modules/**"
+  ],
+  "plugins": {
+    "doc_comment": true,
+    "commonjs": {},
+    "complete_strings": {
+      "maxLength": 15
+    },
+    "node": {
+      "dontLoad": "",
+      "load": "",
+      "modules": ""
+    },
+    "node_resolve": {},
+    "requirejs": {
+      "baseURL": "",
+      "paths": "",
+      "override": ""
+    }
+  }
+}
