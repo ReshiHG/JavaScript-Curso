@@ -28,7 +28,7 @@ export function moveBall(e, ball, stage) {
         limitsBall = $ball.getBoundingClientRect(),
         limitsStage = $stage.getBoundingClientRect();
 
-    console.log(limitsBall,limitsStage);
+    // console.log(limitsBall,limitsStage);
 
     // const move = (direction) => {
     // }
