@@ -11,6 +11,7 @@ import {networkStatus} from "./DOM/deteccion_red.js";
 import {webCam} from "./DOM/deteccion_webcam.js";
 import {ubicacion} from "./DOM/geolocalizacion.js";
 import {buscar} from "./DOM/filtro_busquedas.js";
+import {sortear} from "./DOM/sorteo.js";
 
 const d = document;
 
@@ -33,6 +34,7 @@ d.addEventListener("DOMContentLoaded", e =>{
     webCam("webcam");
     ubicacion("ubicacion");
     buscar(".card-filter",".card");
+    sortear(".player","#winner-btn");
 })
 
 d.addEventListener("keydown", e => {
