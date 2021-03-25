@@ -12,6 +12,7 @@ import {webCam} from "./DOM/deteccion_webcam.js";
 import {ubicacion} from "./DOM/geolocalizacion.js";
 import {buscar} from "./DOM/filtro_busquedas.js";
 import {sortear} from "./DOM/sorteo.js";
+import {slide} from "./DOM/carrusel.js";
 
 const d = document;
 
@@ -35,6 +36,7 @@ d.addEventListener("DOMContentLoaded", e =>{
     ubicacion("ubicacion");
     buscar(".card-filter",".card");
     sortear(".player","#winner-btn");
+    slide(".slider-slide",".prev",".next")
 })
 
 d.addEventListener("keydown", e => {
