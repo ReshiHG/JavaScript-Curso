@@ -13,6 +13,7 @@ import {ubicacion} from "./DOM/geolocalizacion.js";
 import {buscar} from "./DOM/filtro_busquedas.js";
 import {sortear} from "./DOM/sorteo.js";
 import {slide} from "./DOM/carrusel.js";
+import {scrollSpy} from "./DOM/scroll_espia.js";
 
 const d = document;
 
@@ -36,7 +37,8 @@ d.addEventListener("DOMContentLoaded", e =>{
     ubicacion("ubicacion");
     buscar(".card-filter",".card");
     sortear(".player","#winner-btn");
-    slide(".slider-slide",".prev",".next")
+    slide(".slider-slide",".prev",".next");
+    scrollSpy();
 })
 
 d.addEventListener("keydown", e => {

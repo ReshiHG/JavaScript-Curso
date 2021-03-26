@@ -362,20 +362,15 @@ header h1 {
 
     .contenedorMenu{
         grid-area: Menu;
-        position: sticky;
+        position:sticky;
         top: 4rem;
         background-color: var(--second-color);
-        /* justify-content: flex-start;
-        align-self: start; */
+        height: 89vh;
+        overflow-y: scroll;
     }
 
     .menu {
-        /* width: inherit;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: start; */
-        /* overflow-y: scroll; */
+        /* justify-content: start; */
         text-align:left;
     }
 
