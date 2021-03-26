@@ -286,6 +286,15 @@ header h1 {
     object-position: 50% 50%;
 }
 
+.slider-slide h4{
+    padding-top: 10rem;
+}
+
+.slider-slide p{
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
 .slider-slide.active{
     opacity: 1;
     /* visibility: visible; */
@@ -317,4 +326,71 @@ header h1 {
     background-color: rgba(255, 255, 255, 0.3);
     /* color: #4d4d4d; */
     cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/********************************* Scroll Spy *********************************/
+@media screen and (min-width:1024px) {
+    body {
+        display: grid;
+        grid-template-columns: 15% 85%;
+        grid-template-rows: 4rem auto;
+        grid-template-areas:
+        "header header"
+        "Menu main";
+    }
+
+    main{
+        grid-area: main;
+    }
+
+    header{
+        grid-area: header;
+    }
+
+    .hamburger{
+        display: none;
+    }
+
+    .contenedorMenu{
+        grid-area: Menu;
+        position: sticky;
+        top: 4rem;
+        background-color: var(--second-color);
+        /* justify-content: flex-start;
+        align-self: start; */
+    }
+
+    .menu {
+        /* width: inherit;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: start; */
+        /* overflow-y: scroll; */
+        text-align:left;
+    }
+
+    .menu a {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+    }
+
+    .menu a:hover{
+        font-weight: bold;
+    }
+
+    .button-dark-light {
+        right: 2vw;
+        left: auto;
+    }
+
 }
