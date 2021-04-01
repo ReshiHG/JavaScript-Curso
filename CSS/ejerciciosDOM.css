@@ -1,7 +1,7 @@
 /* ************ Reset CSS ************** */
 :root {
     --main-font: 'Roboto', sans-serif;
-    --font-size: 16px;
+    --font-size: 1rem;
     --main-color: #F7DF1E;
     --second-color: #222;
     --main-modal-color: rgba(247, 222, 30, 0.95);
@@ -13,10 +13,30 @@ html {
     box-sizing: border-box;
     /* Para que el tamaño de las cajas no exceda su contenedor padre */
     font-family: var(--main-font);
-    font-size: var(--font-size);
+
+
+/* WARNING: Correción temporal vista adaptable */
+    font-size: 2rem;
+    /* font-size: var(--font-size); ORIGINAL*/
+/* WARNING: Correción temporal vista adaptable */
+
+
     scroll-behavior: smooth;
     /* Para un desplazamiento suve del scroll */
 }
+
+
+
+
+/* WARNING: Correción temporal vista adaptable */
+
+button,input,i,.hamburger-box{
+    font-size: 1rem;
+}
+/* WARNING: Correción temporal vista adaptable */
+
+
+
 
 *, *:before, *:after {
     box-sizing: inherit;
@@ -287,7 +307,7 @@ header h1 {
 }
 
 .slider-slide h4{
-    padding-top: 10rem;
+    /* padding-top: 10rem; */
 }
 
 .slider-slide p{
@@ -335,6 +355,11 @@ header h1 {
 
 
 
+/*************************** Vista diseño adaptable **************************/
+@media screen and (max-width:920px){
+
+}
+
 
 
 /********************************* Scroll Spy *********************************/
@@ -347,6 +372,16 @@ header h1 {
         "header header"
         "Menu main";
     }
+
+
+    /* WARNING: Correción temporal vista adaptable */
+    html{
+        font-size: 1rem;
+    }
+    /* WARNING: Correción temporal vista adaptable */
+
+
+
 
     main{
         grid-area: main;
@@ -362,20 +397,15 @@ header h1 {
 
     .contenedorMenu{
         grid-area: Menu;
-        position: sticky;
+        position:sticky;
         top: 4rem;
         background-color: var(--second-color);
-        /* justify-content: flex-start;
-        align-self: start; */
+        height: 89vh;
+        overflow-y: scroll;
     }
 
     .menu {
-        /* width: inherit;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        align-items: start; */
-        /* overflow-y: scroll; */
+        /* justify-content: start; */
         text-align:left;
     }
 
