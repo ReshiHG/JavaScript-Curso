@@ -14,6 +14,7 @@ import {buscar} from "./DOM/filtro_busquedas.js";
 import {sortear} from "./DOM/sorteo.js";
 import {slide} from "./DOM/carrusel.js";
 import {scrollSpy} from "./DOM/scroll_espia.js";
+import {smartVideo} from "./DOM/video_inteligente.js";
 
 const d = document;
 
@@ -39,6 +40,7 @@ d.addEventListener("DOMContentLoaded", e =>{
     sortear(".player","#winner-btn");
     slide(".slider-slide",".prev",".next");
     scrollSpy();
+    smartVideo();
 })
 
 d.addEventListener("keydown", e => {
