@@ -421,3 +421,76 @@ video{
     }
 
 }
+
+
+/*************************** ContactForm Validations ***************************/
+
+.contact-form{
+    --form-ok-color: #32cd32;
+    --form-error-color: #FE2712;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.contact-form > *{
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+}
+
+.contact-form>label{
+    text-align: left;
+    padding-left: 0;
+}
+
+.contact-form textarea{
+    resize: none;
+}
+
+.contact-form>legend,
+.contact-form-response{
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea{
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.contact-form input[type="submit"]{
+    margin: 1rem auto;
+    width: 50%;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-form *::placeholder{
+    color: #000;
+}
+
+.contact-form [required]:valid{
+    border:thin solid var(--form-ok-color);
+}
+
+.contact-form [required]:invalid{
+    border: thin solid var(--form-error-color);
+}
+
+.contact-form-error{
+    margin-top: -1rem;
+    font-size: 80%;
+    background-color: var(--form-error-color);
+    color: #fff;
+    transition: all 800ms ease;
+}
+.contact-form-error.is-active{
+    display: block;
+    animation: show-message 1s 1 normal 0s ease-out both;
+}
+.none{
+    display: none;
+}

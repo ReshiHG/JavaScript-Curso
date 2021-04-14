@@ -32,7 +32,7 @@
             <a data-scroll-spy class="menuElement" href="#seccion11">Sorteo</a>
             <a data-scroll-spy class="menuElement" href="#seccion12">Responsive Slider</a>
             <a data-scroll-spy class="menuElement" href="#seccion13">Video inteligente</a>
-            <a data-scroll-spy class="menuElement" href="#seccion14">Sección 14</a>
+            <a data-scroll-spy class="menuElement" href="#seccion14">Validaciones de formulario</a>
             <a data-scroll-spy class="menuElement" href="#seccion15">Sección 15</a>
         </div>
     </div>
@@ -264,20 +264,37 @@
                 <br>
                 <br>
                 <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
-                <br>
                 <video data-smart-video src="assets/Ducks.mp4" muted controls loop></video>
             </div>
         </section>
         <section data-scroll-spy id="seccion14">
             <div class="contenedorSeccion">
                 <div class="tituloSeccion">
-                    <h2>Sección 14</h2>
+                    <h2>Validaciones de formulario</h2>
                 </div>
+                <form class="contact-form">
+                    <legend>Envía tus comentarios</legend>
+
+                    <label for="inputName">Nombre</label>
+                    <input id="inputName" type="text" name="name" placeholder="Nombre" title="Solo se aceptan letras y espacios en blanco" required pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$">
+
+                    <label for="inputEmail">E-mail</label>
+                    <input id="inputEmail" type="email" name="email" placeholder="correo@ejemplo.com" title="Ingresa un correo válido" required pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$">
+
+                    <label for="inputSubject">Asunto</label>
+                    <input id="inputSubject" type="text" name="subject" placeholder="Asunto" title="Asunto">
+
+                    <label for="textareaComments">Comentarios</label>
+                    <textarea id="textareaComments" name="comments" rows="8" cols="80" placeholder="Escribe tus comentarios" title="Tu comentario no debe exceder los 255 caracteres" required data-pattern="^.{1,255}$"></textarea>
+
+                    <input type="submit" value="Enviar">
+                    <div class="contact-form-loader none">
+                        <img src="assets/load.svg" alt="Cargando">
+                    </div>
+                    <div class="contact-form-response none">
+                        <p>¡Los datos han sido enviados con éxito!</p>
+                    </div>
+                </form>
             </div>
         </section>
         <section data-scroll-spy id="seccion15">
