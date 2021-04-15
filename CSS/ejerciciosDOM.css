@@ -481,8 +481,8 @@ video{
 }
 
 .contact-form-error{
-    margin-top: -1rem;
-    font-size: 80%;
+    /* margin-top: -1rem; */
+    font-size: 90%;
     background-color: var(--form-error-color);
     color: #fff;
     transition: all 800ms ease;
