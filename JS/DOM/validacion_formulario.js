@@ -35,5 +35,24 @@ export function contactFormValidation(){
                     : d.getElementById($input.name).classList.remove("is-active");
             }
         }
-    })
+    });
+
+    d.addEventListener("submit", e =>{
+        // e.preventDefault();  // Descomentar si no se usa FormSubmit
+        // alert("Envidando formulario");
+
+        const   $loader = d.querySelector(".contact-form-loader"),
+                $response = d.querySelector(".contact-form-response");
+
+        $loader.classList.remove("none");
+
+        setTimeout(() => {
+            $loader.classList.add("none");
+            $response.classList.remove("none");
+            $form.reset();
+            setTimeout(() => {
+                $response.classList.add("none");
+            },5000);
+        }, 2000);
+    });
 }
