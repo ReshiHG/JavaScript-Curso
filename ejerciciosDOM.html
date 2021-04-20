@@ -33,7 +33,7 @@
             <a data-scroll-spy class="menuElement" href="#seccion12">Responsive Slider</a>
             <a data-scroll-spy class="menuElement" href="#seccion13">Video inteligente</a>
             <a data-scroll-spy class="menuElement" href="#seccion14">Validaciones de formulario</a>
-            <a data-scroll-spy class="menuElement" href="#seccion15">Sección 15</a>
+            <a data-scroll-spy class="menuElement" href="#seccion15">Narrador</a>
         </div>
     </div>
 
@@ -303,8 +303,15 @@
         <section data-scroll-spy id="seccion15">
             <div class="contenedorSeccion">
                 <div class="tituloSeccion">
-                    <h2>Sección 15</h2>
+                    <h2>Narrador</h2>
                 </div>
+                <select id="speech-select">
+                    <option value="">--- Elige una voz ----</option>
+                </select>
+                <br><br>
+                <textarea id="speech-text" rows="5" cols="50" placeholder="Ecribe el texto a narrar..."></textarea>
+                <br><br>
+                <button id="speech-btn">Leer</button>
             </div>
         </section>
     </main>

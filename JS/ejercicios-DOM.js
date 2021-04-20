@@ -16,6 +16,7 @@ import {slide} from "./DOM/carrusel.js";
 import {scrollSpy} from "./DOM/scroll_espia.js";
 import {smartVideo} from "./DOM/video_inteligente.js";
 import {contactFormValidation} from "./DOM/validacion_formulario.js";
+import {speechReader} from "./DOM/narrador.js";
 
 const d = document;
 
@@ -52,3 +53,4 @@ d.addEventListener("keydown", e => {
 
 darkLight(".button-dark-light",".fa-moon",".fa-sun");
 networkStatus();
+speechReader();
