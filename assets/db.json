@@ -1,0 +1,46 @@
+{
+  "scps": [
+    {
+      "id": 96,
+      "name": "The Shy Guy",
+      "class": "Euclid"
+    },
+    {
+      "id": 7,
+      "name": "The abdominal planet",
+      "class": "Euclid"
+    },
+    {
+      "id": 49,
+      "name": "Plague Doctor",
+      "class": "Euclid"
+    },
+    {
+      "id": 106,
+      "name": "The old man",
+      "class": "Keter"
+    },
+    {
+      "id": 173,
+      "name": "The Sculpture",
+      "class": "Euclid"
+    }
+  ],
+  "groups_of_interest": [
+    {
+      "id": 1,
+      "name": "The Global Occult Coalition (GOC)",
+      "overview": "The GOC are a largely political force, seeing themselves as the police of the paranormal world. They pride themselves on destroying supernatural entities, and make use of the most high-tech experimental technology possible, obtained from their benefactors. Many potential SCPs have been destroyed by them before the Foundation could obtain and contain them."
+    },
+    {
+      "id": 2,
+      "name": "Are we cool yet?",
+      "overview": "A collective of anomalous artists, or anartists, members of Are We Cool Yet? are capable of either obtaining or producing anomalous objects and entities, and using them to create art installations. These installations are placed for maximum public exposure, and have been fatal to bystanders; the phrase 'Are We Cool Yet?' is always present in some way."
+    },
+    {
+      "id": 3,
+      "name": "The factory",
+      "overview": "Little is known about The Factory. Excursions into facilities purported to be operated by them have yielded limited results, and no concrete conclusions have been reached except that they seem capable of manufacturing anomalous artifacts — and that they use mass-production techniques to do so."
+    }
+  ]
+}
