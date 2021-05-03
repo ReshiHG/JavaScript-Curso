@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>CRUD API REST FETCH</title>
+    </head>
+    <body>
+        <h1>CRUD API REST FETCH</h1>
+        <section class="crud">
+            <article>
+                <h2>Agregar SCP</h2>
+                <form class="crud-form">
+                    <input type="text" name="numero" placeholder="Número" required>
+                    <br>
+                    <input type="text" name="nombreSCP" placeholder="Nombre clave" required>
+                    <br>
+                    <input type="text" name="claseSCP" placeholder="Clase" required>
+                    <br>
+                    <input type="submit" value="Enviar">
+                    <input type="hidden" name="id">
+                </form>
+            </article>
+            <article>
+                <h2>Ver SCPs</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Nombre clave</th>
+                            <th>Clasificación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>96</td>
+                            <td>The Shy Guy</td>
+                            <td>Euclid</td>
+                            <td>
+                                <button>Editar</button>
+                                <button>Eliminar</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <template id="crud-template">
+            <tr>
+                <td class="SCP_Number">96</td>
+                <td class="SCP_Name">The Shy Guy</td>
+                <td class="SCP_Class">Euclid</td>
+                <td>
+                    <button class="edit">Editar</button>
+                    <button class="delete">Eliminar</button>
+                </td>
+            </tr>
+        </template>
+        <script type="text/javascript">
+            const   d = document,
+                    $table = d.querySelector(".crud-table"),
+                    $dorm = d.querySelector(".crud-form"),
+                    $title = d.querySelector(".crud-title"),
+                    $template = d.querySelector("#crud-template").content,
+                    $fragment = d.createDocumentFragment();
+        </script>
+    </body>
+</html>

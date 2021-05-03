@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>CRUD API REST AJAX</title>
+    </head>
+    <body>
+        <h1>CRUD API REST AJAX</h1>
+        <section class="crud">
+            <article>
+                <h2 class="crud-title">Agregar SCP</h2>
+                <form class="crud-form">
+                    <input type="text" name="numeroSCP" placeholder="Número" required>
+                    <br>
+                    <input type="text" name="nombreSCP" placeholder="Nombre clave" required>
+                    <br>
+                    <input type="text" name="claseSCP" placeholder="Clase" required>
+                    <br>
+                    <input type="submit" value="Enviar">
+                    <input type="hidden" name="id">
+                    <br><br>
+
+                </form>
+            </article>
+            <article>
+                <h2>Ver SCPs</h2>
+                <table class="crud-table">
+                    <thead>
+                        <tr>
+                            <th>Número</th>
+                            <th>Nombre clave</th>
+                            <th>Clasificación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- <tr>
+                            <td>96</td>
+                            <td>The Shy Guy</td>
+                            <td>Euclid</td>
+                            <td>
+                                <button>Editar</button>
+                                <button>Eliminar</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </article>
+        </section>
+        <template id="crud-template">
+            <tr>
+                <td class="SCP_Number">96</td>
+                <td class="SCP_Name">The Shy Guy</td>
+                <td class="SCP_Class">Euclid</td>
+                <td>
+                    <button class="edit">Editar</button>
+                    <button class="delete">Eliminar</button>
+                </td>
+            </tr>
+        </template>
+        <script type="text/javascript">
+            const   d = document,
+                    $table = d.querySelector(".crud-table"),
+                    $form = d.querySelector(".crud-form"),
+                    $title = d.querySelector(".crud-title"),
+                    $template = d.querySelector("#crud-template").content,
+                    $fragment = d.createDocumentFragment();
+
+            const ajax = (options) => {
+                let {url, method, success, error, data} = options;
+                const xhr = new XMLHttpRequest();
+
+                xhr.addEventListener("readystatechange",e =>{
+                    if (xhr.readyState === 4){
+                        if (xhr.status >= 200 && xhr.status < 300) {
+                            let json = JSON.parse(xhr.responseText);
+                            success(json);
+                        } else {
+                            let message = xhr.statusText || "Ocurrió un error inesperado...";
+                            error(`Error ${xhr.status}: ${message}`);
+                        }
+                    }
+                });
+
+                xhr.open((method || "GET"), url);
+                xhr.setRequestHeader("Content-type","application/json; charset=utf-8");
+                xhr.send(JSON.stringify(data));
+            }
+
+            function getAllSCP (){
+                ajax({
+                    method:"GET",
+                    url:"http://localhost:5000/scps",
+                    success: (res) => {
+                        res.forEach(el => {
+                            $template.querySelector(".SCP_Number").textContent = el.number;
+                            $template.querySelector(".SCP_Name").textContent = el.name;
+                            $template.querySelector(".SCP_Class").textContent = el.class;
+                            $template.querySelector(".edit").dataset.id = el.id;
+                            $template.querySelector(".edit").dataset.number = el.number;
+                            $template.querySelector(".edit").dataset.name = el.name;
+                            $template.querySelector(".edit").dataset.class = el.class;
+                            $template.querySelector(".delete").dataset.id = el.id;
+                            $template.querySelector(".delete").dataset.number = el.number;
+                            $template.querySelector(".delete").dataset.name = el.name;
+                            $template.querySelector(".delete").dataset.class = el.class;
+
+                            let $clone = d.importNode($template,true);
+                            $fragment.appendChild($clone);
+                        });
+
+                        $table.querySelector("tbody").appendChild($fragment);
+                    },
+                    error: (err) => {
+                        console.log(err);
+                        $table.insertAdjacentHTML("afterend",`<p><b>${err}</b></p>`);
+                    },
+                    data: null
+                })
+            }
+
+            d.addEventListener("DOMContentLoaded", getAllSCP);
+
+            d.addEventListener("submit",e => {
+                if (e.target === $form) {
+                    e.preventDefault();
+
+                    if (!e.target.id.value) {    //Si el id del elemento no existe
+                        //Create - POST
+                        ajax({
+                            url: "http://localhost:5000/scps",
+                            method: "POST",
+                            success: (res) => limpiarForm(),
+                            error: () => $form.insertAdjacentHTML("afterend",`<p><b>${err}</b></p>`),
+                            data: {
+                                number: e.target.numeroSCP.value,
+                                name: e.target.nombreSCP.value,
+                                class: e.target.claseSCP.value
+                            }
+                        });
+                    } else {
+                        //Update -PUT
+                        ajax({
+                            url: `http://localhost:5000/scps/${e.target.id.value}`,
+                            method: "PUT",
+                            success: (res) => limpiarForm(),
+                            error: () => $form.insertAdjacentHTML("afterend",`<p><b>${err}</b></p>`),
+                            data: {
+                                number: e.target.numeroSCP.value,
+                                name: e.target.nombreSCP.value,
+                                class: e.target.claseSCP.value
+                            }
+                        });
+                    }
+                }
+            });
+
+            d.addEventListener("click", e => {
+                if (e.target.matches(".edit")) {
+                    // alert("Presionaste Editar");
+                    $title.textContent = "Editar SCP";
+                    $form.numeroSCP.value = e.target.dataset.number;
+                    $form.nombreSCP.value = e.target.dataset.name;
+                    $form.claseSCP.value = e.target.dataset.class;
+                    $form.id.value = e.target.dataset.id;
+                }
+
+                if (e.target.matches(".delete")) {
+                    // alert("Presionaste Eliminar");
+                    let isDelete = confirm(`¿Deseas eliminar el SCP-${e.target.dataset.number}?`);
+
+                    if (isDelete) {
+                        //Delete - DELETE
+                        ajax({
+                            url: `http://localhost:5000/scps/${e.target.dataset.id}`,
+                            method: "DELETE",
+                            success: (res) => limpiarForm(),
+                            error: () => $form.insertAdjacentHTML("afterend",`<p><b>${err}</b></p>`)
+                        });
+                    }
+                }
+
+            });
+
+            function limpiarForm (){
+                $title.textContent = "Agregar SCP";
+                $form.numeroSCP.value = null;
+                $form.nombreSCP.value = null;
+                $form.claseSCP.value = null;
+                $form.id.value = null;
+            };
+
+
+        </script>
+    </body>
+</html>

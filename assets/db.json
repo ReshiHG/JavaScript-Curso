@@ -1,29 +1,40 @@
 {
   "scps": [
     {
-      "id": 96,
+      "id": 1,
+      "number": 96,
       "name": "The Shy Guy",
       "class": "Euclid"
     },
     {
-      "id": 7,
+      "id": 2,
+      "number": 7,
       "name": "The abdominal planet",
       "class": "Euclid"
     },
     {
-      "id": 49,
+      "id": 3,
+      "number": 49,
       "name": "Plague Doctor",
       "class": "Euclid"
     },
     {
-      "id": 106,
+      "id": 4,
+      "number": 106,
       "name": "The old man",
       "class": "Keter"
     },
     {
-      "id": 173,
+      "id": 5,
+      "number": 173,
       "name": "The Sculpture",
       "class": "Euclid"
+    },
+    {
+      "number": "1199",
+      "name": "Rocky",
+      "class": "Safe",
+      "id": 8
     }
   ],
   "groups_of_interest": [

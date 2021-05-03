@@ -1,4 +1,5 @@
-(() => {
+// -------------------------------------------AJAX----------------------------------
+(() => {    
     const xhr = new XMLHttpRequest(),
         $xhr = document.querySelector("#xhr"),
         $fragment = document.createDocumentFragment();
