@@ -6,18 +6,27 @@
 // una cadena de texto, pe. miFuncion("Hola Mundo") devolverá 10.
 // `);
 //
-// function miFuncion(a){
-//     if(typeof(a) === `string`){
-//         return console.log(`"${a}" tiene ${a.length} caracteres`);
-//     }else{
-//         let cadena = a.toString();
-//         let nCaracteres = cadena.length;
-//         console.log(`"${a}" tiene ${nCaracteres} caracteres`);
-//         console.warn("Por favor ingrese una cadena de texto la próxima vez");
-//     }
-// };
-// miFuncion("Hola Mundo");
-// miFuncion(3440);
+
+
+//ts-check
+/**
+ * miFuncion - description
+ *
+ * @param  {string} a palabra
+ * @return {void}   description
+ */
+function miFuncion(a){
+    if(typeof(a) === `string`){
+        return console.log(`"${a}" tiene ${a.length} caracteres`);
+    }else{
+        let cadena = a.toString();
+        let nCaracteres = cadena.length;
+        console.log(`"${a}" tiene ${nCaracteres} caracteres`);
+        console.warn("Por favor ingrese una cadena de texto la próxima vez");
+    }
+};
+miFuncion("Hola Mundo");
+miFuncion(3440);
 
 
 
