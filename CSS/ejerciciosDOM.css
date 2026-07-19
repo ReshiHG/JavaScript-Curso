@@ -52,10 +52,10 @@ header h1 {
 
 .hamburger {
   position: fixed;
-  bottom: 1rem;
-  right: 1rem;
-  width: 56px;
-  height: 56px;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 64px;
+  height: 64px;
   padding: 0;
   margin: 0;
   background-color: var(--main-color);
@@ -120,7 +120,7 @@ header h1 {
 .button-up-container {
   position: fixed;
   bottom: 1.5rem;
-  right: calc(1.5rem + 4.5rem);
+  right: calc(1.5rem + 5rem);
   align-items: center;
   background-color: var(--main-color);
   border-radius: 50%;
@@ -147,16 +147,16 @@ header h1 {
 
 /********************* Dark Mode *****************/
 .button-dark-light {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 1.5rem;
   align-items: center;
   background-color: var(--main-color);
   border-radius: 50%;
-  bottom: 4vh;
   display: flex;
   height: 4rem;
   justify-content: center;
   padding: 0;
-  position: fixed;
-  left: 2vw;
   width: 4rem;
   z-index: 100;
   border: 0;
@@ -178,7 +178,7 @@ header h1 {
   margin: 0 auto;
   width: 100%;
   max-width: var(--container-width);
-  min-height: 100vh;
+  min-height: calc(100vh - 70px);
   text-align: center;
 }
 
@@ -358,7 +358,8 @@ video {
     position: sticky;
     top: 4rem;
     background-color: var(--second-color);
-    height: 89vh;
+    height: calc(100vh - 64px);
+    width: 100%;
     overflow-y: scroll;
   }
 
