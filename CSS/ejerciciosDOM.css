@@ -1,504 +1,475 @@
 /* ************ Reset CSS ************** */
 :root {
-    --main-font: 'Roboto', sans-serif;
-    --font-size: 1rem;
-    --main-color: #F7DF1E;
-    --second-color: #222;
-    --main-modal-color: rgba(247, 222, 30, 0.95);
-    --second-modal-color: rgba(34, 34, 34, 0.95);
-    --container-width: 1200px;
+  --main-font: "Roboto", sans-serif;
+  --font-size: 1rem;
+  --main-color: #f7df1e;
+  --second-color: #222;
+  --main-modal-color: rgba(247, 222, 30, 0.95);
+  --second-modal-color: rgba(34, 34, 34, 0.95);
+  --container-width: 1200px;
 }
 
 html {
-    box-sizing: border-box;
-    /* Para que el tamaño de las cajas no exceda su contenedor padre */
-    font-family: var(--main-font);
+  box-sizing: border-box;
+  /* Para que el tamaño de las cajas no exceda su contenedor padre */
+  font-family: var(--main-font);
 
+  /* WARNING: Correción temporal vista adaptable */
+  font-size: 2rem;
+  /* font-size: var(--font-size); ORIGINAL*/
+  /* WARNING: Correción temporal vista adaptable */
 
-/* WARNING: Correción temporal vista adaptable */
-    font-size: 2rem;
-    /* font-size: var(--font-size); ORIGINAL*/
-/* WARNING: Correción temporal vista adaptable */
-
-
-    scroll-behavior: smooth;
-    /* Para un desplazamiento suve del scroll */
+  scroll-behavior: smooth;
+  /* Para un desplazamiento suve del scroll */
 }
 
-
-
-
 /* WARNING: Correción temporal vista adaptable */
 
-button,input,i,.hamburger-box{
-    font-size: 1rem;
+button,
+input,
+i,
+.hamburger-box {
+  font-size: 1rem;
 }
 /* WARNING: Correción temporal vista adaptable */
 
-
-
-
-*, *:before, *:after {
-    box-sizing: inherit;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    overflow-x: hidden;
-    /* Evita generar un scroll horizontal si existe desbordamiento horizontal */
+  margin: 0;
+  overflow-x: hidden;
+  /* Evita generar un scroll horizontal si existe desbordamiento horizontal */
 }
 
 img {
-    max-width: 100%;
-    height: auto;
+  max-width: 100%;
+  height: auto;
 }
 
 /******************** Encabezado ******************/
 header {
-    background-color: var(--main-color);
-    color: var(--second-color);
-    padding: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 88;
+  background-color: var(--main-color);
+  color: var(--second-color);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 88;
 }
 
 header h1 {
-    margin: 0 auto;
-    text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /********************* Menú hamburguesa *****************/
 .hamburger {
-    align-items: center;
-    background-color: var(--main-color);
-    border-radius: 50%;
-    bottom: 4vh;
-    display: flex;
-    height: 4rem;
-    justify-content: center;
-    padding: 0;
-    position: fixed;
-    right: 2vw;
-    width: 4rem;
-    z-index: 100;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  bottom: 4vh;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  padding: 0;
+  position: fixed;
+  right: 2vw;
+  width: 4rem;
+  z-index: 100;
 }
 
 .contenedorMenu {
-    background-color: var(--second-modal-color);
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    transition: 0.8s;
-    z-index: 99;
+  background-color: var(--second-modal-color);
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  transition: 0.8s;
+  z-index: 99;
 }
 
 .menu {
-    width: inherit;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
 }
 
 .menuElement {
-    padding: 0.3rem;
-    width: inherit;
-    display: block;
-    font-size: 1.5rem;
-    text-decoration: none;
-    color: var(--main-color);
-    transition: all 0.3s ease;
+  padding: 0.3rem;
+  width: inherit;
+  display: block;
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: var(--main-color);
+  transition: all 0.3s ease;
 }
 
 .menuElement:hover {
-    font-weight: bold;
-    color: var(--second-color);
-    background-color: var(--main-modal-color);
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
 }
 
-.menuElementActive{
-    font-weight: bold;
-    color: var(--second-color);
-    background-color: var(--main-modal-color);
+.menuElementActive {
+  font-weight: bold;
+  color: var(--second-color);
+  background-color: var(--main-modal-color);
 }
 
 .menuInactivo {
-    top: -200vh;
-    transition: 0.2s ease;
+  top: -200vh;
+  transition: 0.2s ease;
 }
 
 /********************* Scroll Arrow-up *****************/
 .button-up-container {
-    align-items: center;
-    background-color: var(--main-color);
-    border-radius: 50%;
-    bottom: 4vh;
-    /* display: flex; */
-    display: none;
-    height: 4rem;
-    justify-content: center;
-    padding: 0;
-    position: fixed;
-    right: calc(2vw + 4.5rem);
-    width: 4rem;
-    z-index: 100;
-    border: 0;
-    align-items: center;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  bottom: 4vh;
+  /* display: flex; */
+  display: none;
+  height: 4rem;
+  justify-content: center;
+  padding: 0;
+  position: fixed;
+  right: calc(2vw + 4.5rem);
+  width: 4rem;
+  z-index: 100;
+  border: 0;
+  align-items: center;
 }
 
 .button-up-container:hover {
-    opacity: 0.7;
-    transition: all 0.3s ease;
-    cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
 .button-up-container span {
-    color: var(--second-color);
+  color: var(--second-color);
 }
-
 
 /********************* Dark Mode *****************/
 .button-dark-light {
-    align-items: center;
-    background-color: var(--main-color);
-    border-radius: 50%;
-    bottom: 4vh;
-    display: flex;
-    height: 4rem;
-    justify-content: center;
-    padding: 0;
-    position: fixed;
-    left: 2vw;
-    width: 4rem;
-    z-index: 100;
-    border: 0;
-    align-items: center;
+  align-items: center;
+  background-color: var(--main-color);
+  border-radius: 50%;
+  bottom: 4vh;
+  display: flex;
+  height: 4rem;
+  justify-content: center;
+  padding: 0;
+  position: fixed;
+  left: 2vw;
+  width: 4rem;
+  z-index: 100;
+  border: 0;
+  align-items: center;
 }
 
 .button-dark-light:hover {
-    /* opacity: 0.7; */
-    transition: all 0.3s ease;
-    background-color: var(--second-color);
-    cursor: pointer;
-    color: var(--main-color);
+  /* opacity: 0.7; */
+  transition: all 0.3s ease;
+  background-color: var(--second-color);
+  cursor: pointer;
+  color: var(--main-color);
 }
 
 /*********************** Secciones **********************/
 .contenedorSeccion {
-    padding: 2rem;
-    padding-top: 4rem;
-    margin: 0 auto;
-    width: 100%;
-    max-width: var(--container-width);
-    min-height: 100vh;
-    text-align: center;
+  padding: 2rem;
+  padding-top: 4rem;
+  margin: 0 auto;
+  width: 100%;
+  max-width: var(--container-width);
+  min-height: 100vh;
+  text-align: center;
 }
 
 /**************************** Eventos del teclado **************************/
 .stage {
-    display: flex;
-    min-height: 50vh;
-    background-color: var(--second-color);
+  display: flex;
+  min-height: 50vh;
+  background-color: var(--second-color);
 }
 
 .ball {
-    margin: auto;
-    height: 4rem;
-    width: 4rem;
-    border-radius: 50%;
-    background-color: var(--main-color);
+  margin: auto;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  background-color: var(--main-color);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 /**************************** DARK THEME **************************************/
-.darkMode{
-    color: var(--main-color);
-    background-color: var(--second-color);
+.darkMode {
+  color: var(--main-color);
+  background-color: var(--second-color);
 }
-
-
 
 /***************************    Network Status    *****************************/
 
-.online,.offline{
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    padding: 1rem;
-    font-size: 1.5rem;
-    font-weight: bold;
-    text-align: center;
-    background-color: #32cd32;
-    color: #FFF;
+.online,
+.offline {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #32cd32;
+  color: #fff;
 }
-.offline{
-    background-color: #FE2712;
+.offline {
+  background-color: #fe2712;
 }
-
 
 /****************************    SearchFilters    ****************************/
 
-.cards{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
-.card{
-    background-color: var(--second-color);
-    color: var(--main-color);
-    transition: all 0.3s ease-out;
+.card {
+  background-color: var(--second-color);
+  color: var(--main-color);
+  transition: all 0.3s ease-out;
 }
 
-.card img{
-    width: 100%;
-    height: auto;
+.card img {
+  width: 100%;
+  height: auto;
 }
 
-.card figcaption{
-    padding: 1rem;
+.card figcaption {
+  padding: 1rem;
 }
 
-.filter{
-    /* display: none; */
-    visibility: hidden;;
-    opacity: 0;
-    order: 1;
+.filter {
+  /* display: none; */
+  visibility: hidden;
+  opacity: 0;
+  order: 1;
 }
-
 
 /*************************** Responsive Slider ***************************/
 
-
-.slider{
-    position: relative;
-    width: 80%;
-    margin: 1rem auto;
-    text-align: center;
+.slider {
+  position: relative;
+  width: 80%;
+  margin: 1rem auto;
+  text-align: center;
 }
 
-.slider-slides{
-    position: relative;
-    height: 400px;
+.slider-slides {
+  position: relative;
+  height: 400px;
 }
 
-.slider-slide{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 1s ease;
+.slider-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 
-.slider-slide img{
-    height: inherit;
-    width: inherit;
-    object-fit: cover;
-    object-position: 50% 50%;
+.slider-slide img {
+  height: inherit;
+  width: inherit;
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
-.slider-slide h4{
-    /* padding-top: 10rem; */
+.slider-slide p {
+  padding-left: 4rem;
+  padding-right: 4rem;
 }
 
-.slider-slide p{
-    padding-left: 4rem;
-    padding-right: 4rem;
+.slider-slide.active {
+  opacity: 1;
+  /* visibility: visible; */
 }
 
-.slider-slide.active{
-    opacity: 1;
-    /* visibility: visible; */
+.slider-btns {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 3rem;
+  font-weight: bold;
 }
 
-.slider-btns{
-    position: absolute;
-    top: 50%;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    font-size: 3rem;
-    font-weight: bold;
+.slider a {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  /* border: thin solid #000; */
+  background-color: rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: #000;
+  transition: all 0.3 ease;
 }
 
-.slider a{
-    display: block;
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    /* border: thin solid #000; */
-    background-color: rgba(255, 255, 255, 0.1);
-    text-decoration: none;
-    color: #000;
-    transition: all 0.3 ease;
-}
-
-.slider a:hover{
-    background-color: rgba(255, 255, 255, 0.3);
-    /* color: #4d4d4d; */
-    cursor: pointer;
+.slider a:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  /* color: #4d4d4d; */
+  cursor: pointer;
 }
 
 /*********************************** Video ***********************************/
-video{
-    width: 100%;
+video {
+  width: 100%;
 }
 
 /********************************* Scroll Spy *********************************/
-@media screen and (min-width:1024px) {
-    body {
-        display: grid;
-        grid-template-columns: 15% 85%;
-        grid-template-rows: 4rem auto;
-        grid-template-areas:
-        "header header"
-        "Menu main";
-    }
+@media screen and (min-width: 1024px) {
+  body {
+    display: grid;
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 4rem auto;
+    grid-template-areas:
+      "header header"
+      "Menu main";
+  }
 
+  /* WARNING: Correción temporal vista adaptable */
+  html {
+    font-size: 1rem;
+  }
+  /* WARNING: Correción temporal vista adaptable */
 
-    /* WARNING: Correción temporal vista adaptable */
-    html{
-        font-size: 1rem;
-    }
-    /* WARNING: Correción temporal vista adaptable */
+  main {
+    grid-area: main;
+  }
 
+  header {
+    grid-area: header;
+  }
 
+  .hamburger {
+    display: none;
+  }
 
+  .contenedorMenu {
+    grid-area: Menu;
+    position: sticky;
+    top: 4rem;
+    background-color: var(--second-color);
+    height: 89vh;
+    overflow-y: scroll;
+  }
 
-    main{
-        grid-area: main;
-    }
+  .menu {
+    /* justify-content: start; */
+    text-align: left;
+  }
 
-    header{
-        grid-area: header;
-    }
+  .menu a {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+  }
 
-    .hamburger{
-        display: none;
-    }
+  .menu a:hover {
+    font-weight: bold;
+  }
 
-    .contenedorMenu{
-        grid-area: Menu;
-        position:sticky;
-        top: 4rem;
-        background-color: var(--second-color);
-        height: 89vh;
-        overflow-y: scroll;
-    }
-
-    .menu {
-        /* justify-content: start; */
-        text-align:left;
-    }
-
-    .menu a {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
-    }
-
-    .menu a:hover{
-        font-weight: bold;
-    }
-
-    .button-dark-light {
-        right: 2vw;
-        left: auto;
-    }
-
+  .button-dark-light {
+    right: 2vw;
+    left: auto;
+  }
 }
-
 
 /*************************** ContactForm Validations ***************************/
 
-.contact-form{
-    --form-ok-color: #32cd32;
-    --form-error-color: #FE2712;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
+.contact-form {
+  --form-ok-color: #32cd32;
+  --form-error-color: #fe2712;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
 }
 
-.contact-form > *{
-    display: block;
-    width: 100%;
-    padding: 0.5rem;
+.contact-form > * {
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
 }
 
-.contact-form>label{
-    text-align: left;
-    padding-left: 0;
+.contact-form > label {
+  text-align: left;
+  padding-left: 0;
 }
 
-.contact-form textarea{
-    resize: none;
+.contact-form textarea {
+  resize: none;
 }
 
-.contact-form>legend,
-.contact-form-response{
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-align: center;
+.contact-form > legend,
+.contact-form-response {
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
 }
 
 .contact-form input,
-.contact-form textarea{
-    font-size: 1rem;
-    font-family: sans-serif;
+.contact-form textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
 }
 
-.contact-form input[type="submit"]{
-    margin: 1rem auto;
-    width: 50%;
-    font-weight: bold;
-    cursor: pointer;
+.contact-form input[type="submit"] {
+  margin: 1rem auto;
+  width: 50%;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.contact-form *::placeholder{
-    color: #000;
+.contact-form *::placeholder {
+  color: #000;
 }
 
-.contact-form [required]:valid{
-    border:thin solid var(--form-ok-color);
+.contact-form [required]:valid {
+  border: thin solid var(--form-ok-color);
 }
 
-.contact-form [required]:invalid{
-    border: thin solid var(--form-error-color);
+.contact-form [required]:invalid {
+  border: thin solid var(--form-error-color);
 }
 
-.contact-form-error{
-    /* margin-top: -1rem; */
-    font-size: 90%;
-    background-color: var(--form-error-color);
-    color: #fff;
-    transition: all 800ms ease;
+.contact-form-error {
+  /* margin-top: -1rem; */
+  font-size: 90%;
+  background-color: var(--form-error-color);
+  color: #fff;
+  transition: all 800ms ease;
 }
-.contact-form-error.is-active{
-    display: block;
-    animation: show-message 1s 1 normal 0s ease-out both;
+.contact-form-error.is-active {
+  display: block;
+  animation: show-message 1s 1 normal 0s ease-out both;
 }
-.none{
-    display: none;
+.none {
+  display: none;
 }
 
 /* Narrador */
 
-textarea{
-    font-size: 1rem;
-    font-family: sans-serif;
-    color: #000;
+textarea {
+  font-size: 1rem;
+  font-family: sans-serif;
+  color: #000;
 }
