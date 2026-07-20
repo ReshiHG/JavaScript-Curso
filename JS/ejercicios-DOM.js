@@ -42,9 +42,12 @@ d.addEventListener("DOMContentLoaded", (e) => {
 
   responsiveTester("responsive-tester");
   userDeviceInfo("user-device");
-  webCam("webcam");
+  console.log("antes webcam");
+  webCam("webcam", "camera-message");
+  console.log("despues webcam");
   ubicacion("ubicacion");
   buscar(".card-filter", ".card");
+
   sortear(".player", "#winner-btn");
   slide(".slider-slide", ".prev", ".next");
   scrollSpy();
